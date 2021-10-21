@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Showcase.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Sans-60.tres" type="DynamicFont" id=2]
+
+[node name="Showcase" type="HBoxContainer"]
+margin_right = 576.0
+margin_bottom = 77.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 288.0
+margin_right = 288.0
+margin_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+uppercase = true

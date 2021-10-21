@@ -1,4 +1,4 @@
-extends Node2D
+extends VBoxContainer
 
 
 # Declare member variables here. Examples:
@@ -14,10 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func setup(letter: String):
-	$"Label".text = letter
-
-
-func _on_Button_pressed():
-	self.get_parent().add_node_to_line(self)

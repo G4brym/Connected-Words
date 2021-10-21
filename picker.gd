@@ -1,17 +1,43 @@
 extends Node2D
 
+signal word_change(word)
+
+var Letter = preload("res://Letra.tscn")
 
 func _ready():
-	var _childs = self.get_children()
-	var _total = len(_childs)
+	pass
+
+		
+func setup(word: String):
+	_shuffle(word)
+	
+func _shuffle(word: String):
+	var word_splitted = []
+	for letter in word:
+		word_splitted.append(letter)
+	
+	word_splitted.shuffle()
+	print(word_splitted)
+	_build_childs(word_splitted)
+
+func _build_childs(word: Array):
+	for child in self.get_children():
+		child.queue_free()
+	
+	var _total = len(word)
 	
 	var total = 270.0
-	var radius = 50
+	var radius = 125
+
 	var step = 360 / _total
-	for _child in _childs:
-		_child.position = Vector2(radius*cos(deg2rad(total)), radius*sin(deg2rad(total)))
-		total += step
+	for _letter in word:
+		var letter_node = Letter.instance()
+		letter_node.position = Vector2(radius*cos(deg2rad(total)), radius*sin(deg2rad(total)))
+		letter_node.setup(_letter)
 		
+		add_child(letter_node)
+		total += step
+	
 
 var is_listening = false
 var current_line = null
@@ -22,6 +48,7 @@ func _input(event):
 		is_listening = false
 		current_line.queue_free()
 		current_line = null
+		emit_signal("word_change", "")
 
 func _process(delta):
 	if update_delta < 0 and is_listening:
@@ -50,6 +77,13 @@ func add_node_to_line(node):
 		else:
 			connected_letters.append(node)
 			current_line.add_point(node.global_position, current_line.points.size()-1)
+		
+	var final_word = ""
+	for letter in connected_letters:
+		final_word += letter.get_node("Label").text
+		
+	print(final_word)
+	emit_signal("word_change", final_word)
 	
 
 func create_line(node):
