@@ -29,5 +29,5 @@ func _on_Back_pressed():
 
 
 func _on_Easy_pressed():
-	get_tree().change_scene("res://Scenes/Game.tscn")
+	get_tree().change_scene("res://Modules/Game.tscn")
 	

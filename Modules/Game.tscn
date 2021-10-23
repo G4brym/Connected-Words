@@ -1,14 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Picker.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Showcase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Game.gd" type="Script" id=3]
-[ext_resource path="res://Words.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/book.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/board.png" type="Texture" id=6]
+[ext_resource path="res://Modules/Words/Picker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Modules/Words/Showcase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modules/Words/Scripts/GameManager.gd" type="Script" id=3]
+[ext_resource path="res://Modules/Words/Words.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Sprites/book.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Sprites/board.png" type="Texture" id=6]
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 3 )
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -5
@@ -42,4 +41,5 @@ margin_bottom = 531.0
 
 [node name="Words" parent="UI" instance=ExtResource( 4 )]
 
-[connection signal="word_change" from="UI/Picker" to="." method="_on_Picker_word_change"]
+[node name="GameManager" type="Node" parent="UI"]
+script = ExtResource( 3 )

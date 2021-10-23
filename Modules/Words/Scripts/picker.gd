@@ -1,15 +1,10 @@
 extends Node2D
 
-signal word_change(word)
+var Letter = preload("res://Modules/Words/Letra.tscn")
 
-var Letter = preload("res://Letra.tscn")
+func _ready() -> void:
+	Events.connect("update_picker_letters", self, "_shuffle")
 
-func _ready():
-	pass
-
-		
-func setup(word: String):
-	_shuffle(word)
 	
 func _shuffle(word: String):
 	var word_splitted = []
@@ -17,7 +12,7 @@ func _shuffle(word: String):
 		word_splitted.append(letter)
 	
 	word_splitted.shuffle()
-	print(word_splitted)
+	
 	_build_childs(word_splitted)
 
 func _build_childs(word: Array):
@@ -48,7 +43,7 @@ func _input(event):
 		is_listening = false
 		current_line.queue_free()
 		current_line = null
-		emit_signal("word_change", "")
+		Events.emit_signal("try_word", "")
 
 func _process(delta):
 	if update_delta < 0 and is_listening:
@@ -81,9 +76,8 @@ func add_node_to_line(node):
 	var final_word = ""
 	for letter in connected_letters:
 		final_word += letter.get_node("Label").text
-		
-	print(final_word)
-	emit_signal("word_change", final_word)
+
+	Events.emit_signal("try_word", final_word)
 	
 
 func create_line(node):

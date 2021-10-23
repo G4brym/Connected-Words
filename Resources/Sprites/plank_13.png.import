@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/board.png-4866f8c5e6c8e656b85b3c5d3664e202.stex"
+path="res://.import/plank_13.png-13aa8250eacb327fa0ed0716f4efd33f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/board.png"
-dest_files=[ "res://.import/board.png-4866f8c5e6c8e656b85b3c5d3664e202.stex" ]
+source_file="res://Resources/Sprites/plank_13.png"
+dest_files=[ "res://.import/plank_13.png-13aa8250eacb327fa0ed0716f4efd33f.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

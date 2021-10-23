@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Showcase.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/Sans-60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Modules/Words/Scripts/Showcase.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/Sans-60.tres" type="DynamicFont" id=2]
 
 [node name="Showcase" type="HBoxContainer"]
 margin_right = 576.0

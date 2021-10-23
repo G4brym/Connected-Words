@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="Connected words"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Modules/Menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Globals="*res://Scripts/Globals.gd"
 Events="*res://Scripts/Events.gd"
+WordManager="*res://Scripts/WordManager.gd"
 
 [display]
 
