@@ -5,7 +5,7 @@
 [ext_resource path="res://Modules/Words/Scripts/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://Modules/Words/Words.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Resources/Sprites/book.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Sprites/board.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Sprites/back.png" type="Texture" id=6]
 
 [node name="Game" type="Node2D"]
 
@@ -13,7 +13,8 @@
 z_index = -5
 
 [node name="Board" type="TextureRect" parent="Background"]
-margin_right = 770.0
+margin_left = -94.0
+margin_right = 802.0
 margin_bottom = 1373.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 6 )
@@ -31,7 +32,7 @@ texture = ExtResource( 5 )
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Picker" parent="UI" instance=ExtResource( 1 )]
-position = Vector2( 288, 750 )
+position = Vector2( 288, 775 )
 
 [node name="Tween" type="Tween" parent="UI"]
 

@@ -12,5 +12,5 @@ func _ready() -> void:
 	connect("update_picker_letters", self, "_log", ["update_picker_letters"])
 
 
-func _log(msg: String, func_name: String) -> void:
-	print(func_name + ": " + msg)
+func _log(msg, func_name: String) -> void:
+	print(func_name, ": ", msg)

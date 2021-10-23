@@ -22,7 +22,7 @@ func _build_childs(word: Array):
 	var _total = len(word)
 	
 	var total = 270.0
-	var radius = 125
+	var radius = 175
 
 	var step = 360 / _total
 	for _letter in word:
