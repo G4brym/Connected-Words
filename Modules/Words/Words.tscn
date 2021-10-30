@@ -14,6 +14,10 @@ __meta__ = {
 [node name="Left" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0
 margin_right = 288.0
+custom_constants/separation = 42
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Right" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0

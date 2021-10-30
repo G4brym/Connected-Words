@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Icons/blank-letter.png" type="Texture" id=1]
+[ext_resource path="res://Modules/Words/Scripts/BlankLetra.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Fonts/Sans-40.tres" type="DynamicFont" id=3]
+
+[node name="Letra" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TouchScreenButton" parent="."]
+position = Vector2( -16.9932, -17.6606 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 1 )
+passby_press = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -21.7996
+margin_top = -27.13
+margin_right = 21.2004
+margin_bottom = 28.87
+custom_fonts/font = ExtResource( 3 )
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

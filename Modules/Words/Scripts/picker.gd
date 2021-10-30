@@ -84,8 +84,12 @@ func create_line(node):
 	connected_letters = [node]
 	is_listening = true
 	current_line = Line2D.new()
-	current_line.default_color = Color(255,255,255,1)
-	current_line.width = 5
+	current_line.set_joint_mode(1)
+	current_line.set_default_color(Color(0.95, 0.61, 0.07,1))
+	current_line.set_width(10)
+	current_line.set_antialiased(true)
+	current_line.set_begin_cap_mode(2)
+	current_line.set_end_cap_mode(2)
 	var pool = PoolVector2Array([node.global_position, get_global_mouse_position()])
 	
 	current_line.points = pool

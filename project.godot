@@ -12,6 +12,8 @@ config_version=4
 
 config/name="Connected words"
 run/main_scene="res://Modules/Menu/Menu.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [autoload]
