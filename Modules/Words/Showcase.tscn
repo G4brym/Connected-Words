@@ -1,31 +1,24 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Modules/Words/Scripts/Showcase.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Fonts/Sans-60.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Resources/Sprites/strip_bg02.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/Sans-40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Modules/Words/Scripts/Showcase.gd" type="Script" id=2]
+[ext_resource path="res://Resources/theme.tres" type="Theme" id=3]
 
-[node name="Showcase" type="HBoxContainer"]
-margin_right = 576.0
-margin_bottom = 77.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="strip_bg02" type="Sprite" parent="."]
-position = Vector2( 290.011, 43.0098 )
-scale = Vector2( 0.473009, 0.473009 )
-texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 288.0
-margin_right = 288.0
-margin_bottom = 77.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-custom_fonts/font = ExtResource( 2 )
+[node name="Showcase" type="Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -512.0
+margin_right = -288.0
+margin_bottom = -473.0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
 align = 1
 valign = 1
 uppercase = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,6 +1,7 @@
 extends Node2D
 
 var Letter = preload("res://Modules/Words/Letra.tscn")
+const radius = 170
 
 func _ready() -> void:
 	Events.connect("update_picker_letters", self, "_shuffle")
@@ -20,9 +21,7 @@ func _build_childs(word: Array):
 		child.queue_free()
 	
 	var _total = len(word)
-	
 	var total = 270.0
-	var radius = 175
 
 	var step = 360 / _total
 	for _letter in word:
@@ -75,7 +74,7 @@ func add_node_to_line(node):
 		
 	var final_word = ""
 	for letter in connected_letters:
-		final_word += letter.get_node("Label").text
+		final_word += letter.letter
 
 	Events.emit_signal("try_word", final_word)
 	
@@ -85,7 +84,7 @@ func create_line(node):
 	is_listening = true
 	current_line = Line2D.new()
 	current_line.set_joint_mode(1)
-	current_line.set_default_color(Color(0.95, 0.61, 0.07,1))
+	current_line.set_default_color(Color(0.91, 0.64, 0.14 ,1))
 	current_line.set_width(10)
 	current_line.set_antialiased(true)
 	current_line.set_begin_cap_mode(2)

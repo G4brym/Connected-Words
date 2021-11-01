@@ -1,11 +1,12 @@
 extends Node2D
 
+var letter: String
 
 
-
-func setup(letter: String):
-	$"Label".text = letter.to_upper()
-
+func setup(new_letter: String):
+	letter = new_letter.to_upper()
+	$"Button/Label".text = letter
+	
 
 func _on_Button_pressed():
 	self.get_parent().add_node_to_line(self)

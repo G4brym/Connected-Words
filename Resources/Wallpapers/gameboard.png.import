@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/back.png-683f12e53231f3bc7004e2b012329b4c.stex"
+path="res://.import/gameboard.png-8a0f4895105dc4b7f2f58fb2cda5d9ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/back.png"
-dest_files=[ "res://.import/back.png-683f12e53231f3bc7004e2b012329b4c.stex" ]
+source_file="res://Resources/Wallpapers/gameboard.png"
+dest_files=[ "res://.import/gameboard.png-8a0f4895105dc4b7f2f58fb2cda5d9ab.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=true
+flags/repeat=0
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
