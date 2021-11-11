@@ -3,18 +3,34 @@ extends Node2D
 var Letter = preload("res://Modules/Words/Letra.tscn")
 const radius = 170
 
+var letters
+
 func _ready() -> void:
-	Events.connect("update_picker_letters", self, "_shuffle")
+	Events.connect("update_picker_letters", self, "_update_picker_letters")
+	Events.connect("shuffle", self, "_shuffle_and_build")
+	
+	Events.connect("word_found", self, "_reset_picker")
+	Events.connect("optional_word_found", self, "_reset_picker")
+
+func _reset_picker(word: String = "") -> void:
+	is_listening = false
+	current_line.queue_free()
+	current_line = null
+	Events.emit_signal("try_word", "")
 
 	
-func _shuffle(word: String):
-	var word_splitted = []
+func _update_picker_letters(word: String):
+	connected_letters = []
+	letters = []
 	for letter in word:
-		word_splitted.append(letter)
+		letters.append(letter)
 	
-	word_splitted.shuffle()
+	_shuffle_and_build()
 	
-	_build_childs(word_splitted)
+func _shuffle_and_build():	
+	letters.shuffle()
+	
+	_build_childs(letters)
 
 func _build_childs(word: Array):
 	for child in self.get_children():
@@ -39,10 +55,7 @@ var update_delta = 0
 
 func _input(event):
 	if event.is_action_released("Click") and current_line != null:
-		is_listening = false
-		current_line.queue_free()
-		current_line = null
-		Events.emit_signal("try_word", "")
+		_reset_picker()
 
 func _process(delta):
 	if update_delta < 0 and is_listening:

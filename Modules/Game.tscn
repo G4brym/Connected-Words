@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Modules/Words/Picker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modules/Words/Showcase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/Words/Scripts/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://Modules/Words/Words.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Resources/Wallpapers/gameboard.png" type="Texture" id=5]
+[ext_resource path="res://Modules/Score.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Modules/Timeout.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Themes/FlatSquareStyleBox.tres" type="StyleBox" id=8]
+[ext_resource path="res://Resources/theme.tres" type="Theme" id=9]
+[ext_resource path="res://Resources/Themes/FlatCircleStyleBox.tres" type="StyleBox" id=10]
+[ext_resource path="res://Resources/Icons/shuffle.png" type="Texture" id=11]
+[ext_resource path="res://Modules/Words/Scripts/Shuffle.gd" type="Script" id=12]
+[ext_resource path="res://Modules/Menu/LevelCompleted.tscn" type="PackedScene" id=13]
 
 [node name="Game" type="Node2D"]
 
@@ -41,3 +49,45 @@ margin_bottom = 180.0
 
 [node name="GameManager" type="Node" parent="UI"]
 script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="VBoxContainer" parent="UI"]
+margin_left = 43.0
+margin_top = 40.0
+margin_right = 162.0
+margin_bottom = 128.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timeout" parent="UI/HBoxContainer" instance=ExtResource( 7 )]
+margin_right = 119.0
+custom_styles/normal = ExtResource( 8 )
+
+[node name="PlayerScore" parent="UI/HBoxContainer" instance=ExtResource( 6 )]
+margin_top = 49.0
+margin_right = 119.0
+margin_bottom = 88.0
+
+[node name="Shuffle" type="Button" parent="UI"]
+margin_left = 47.2644
+margin_top = 938.295
+margin_right = 135.264
+margin_bottom = 1041.3
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 9 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 10 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 10 )
+icon = ExtResource( 11 )
+expand_icon = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelCompleted" parent="UI" instance=ExtResource( 13 )]
+position = Vector2( 576, 0 )
+z_index = 15
