@@ -8,11 +8,14 @@ var level_word
 var level_word_list
 var words_found: Array = []
 
+var optional_words_found: Array = []
+
 func _ready() -> void:
 	dictionary = WordManager.WordDictionary.new()
 	
 	_setup_level()
 	Events.connect("word_found", self, "_check_level_completeness")
+	Events.connect("try_word", self, "_try_optional_word")
 
 
 func _check_level_completeness(word_found: String) -> void:
@@ -24,6 +27,16 @@ func _check_level_completeness(word_found: String) -> void:
 		_setup_level()
 		
 
+func _try_optional_word(word: String) -> void:
+	word = word.to_lower()
+	
+	if len(word) < 4 or word in optional_words_found:
+		return
+	
+	if word in dictionary.full_dictionary and not(word in dictionary.game_dictionary):
+		optional_words_found.append(word)
+		Events.emit_signal("optional_word_found", word)
+		
 
 func _setup_level() -> void:
 	words_found = []

@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Resources/Fonts/Sans-40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/theme.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/Fonts/Sans-50-bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Modules/Menu/Scripts/VersusStart.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Themes/GreenSquareStyleBox.tres" type="StyleBox" id=5]
+[ext_resource path="res://Resources/Fonts/Sans-40-bold.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Resources/Themes/FlatSquareStyleBox.tres" type="StyleBox" id=7]
+[ext_resource path="res://Resources/Themes/BlueSquareStyleBox.tres" type="StyleBox" id=8]
+[ext_resource path="res://Resources/Themes/OrangeSquareStyleBox.tres" type="StyleBox" id=9]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="VersusStart" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 576.0
+margin_bottom = 1024.0
+color = Color( 0, 0, 0, 0.631373 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="PanelContainer" parent="."]
+margin_left = 112.0
+margin_top = 308.0
+margin_right = 469.0
+margin_bottom = 767.0
+theme = ExtResource( 2 )
+custom_styles/panel = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pricing" type="Label" parent="."]
+margin_left = 222.681
+margin_top = 498.659
+margin_right = 404.681
+margin_bottom = 565.659
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Duel (1 on 1)
+You can win 1.5$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 133.317
+margin_top = 344.387
+margin_right = 515.317
+margin_bottom = 467.387
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Test your skills
+against another player!
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="."]
+margin_left = 244.23
+margin_top = 662.498
+margin_right = 436.23
+margin_bottom = 707.498
+theme = ExtResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+disabled = true
+text = "Find a Room"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 141.025
+margin_top = 661.042
+margin_right = 192.025
+margin_bottom = 706.042
+theme = ExtResource( 2 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/focus = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="LineEdit" parent="."]
+margin_left = 158.523
+margin_top = 589.682
+margin_right = 425.523
+margin_bottom = 636.682
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+max_length = 32
+clear_button_enabled = true
+placeholder_text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 182.033
+margin_top = 512.061
+margin_right = 215.033
+margin_bottom = 536.061
+pressed = true
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="text_changed" from="Username" to="." method="_on_Username_text_changed"]

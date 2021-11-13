@@ -1,8 +1,4 @@
 extends Node2D
-
-
-func _ready():
-	Events.connect("level_completed", self, "_show")
 	
 
 func _show(score: int) -> void:
@@ -12,3 +8,11 @@ func _show(score: int) -> void:
 
 func _on_Continue_pressed():
 	get_tree().change_scene("res://Modules/Menu/Menu.tscn")
+
+
+func _on_Username_text_changed(new_text):
+	if len(new_text) > 0:
+		$"Continue".disabled = false
+	else:
+		$"Continue".disabled = true
+
