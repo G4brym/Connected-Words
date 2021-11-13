@@ -24,10 +24,10 @@ __meta__ = {
 }
 
 [node name="Container" type="PanelContainer" parent="."]
-margin_left = 112.0
-margin_top = 308.0
-margin_right = 469.0
-margin_bottom = 767.0
+margin_left = 107.045
+margin_top = 100.092
+margin_right = 464.045
+margin_bottom = 559.091
 theme = ExtResource( 2 )
 custom_styles/panel = ExtResource( 7 )
 __meta__ = {
@@ -35,10 +35,10 @@ __meta__ = {
 }
 
 [node name="pricing" type="Label" parent="."]
-margin_left = 222.681
-margin_top = 498.659
-margin_right = 404.681
-margin_bottom = 565.659
+margin_left = 217.726
+margin_top = 290.751
+margin_right = 399.726
+margin_bottom = 357.751
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 133.317
-margin_top = 344.387
-margin_right = 515.317
-margin_bottom = 467.387
+margin_left = 128.362
+margin_top = 136.479
+margin_right = 510.362
+margin_bottom = 259.479
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -65,10 +65,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="."]
-margin_left = 244.23
-margin_top = 662.498
-margin_right = 436.23
-margin_bottom = 707.498
+margin_left = 239.275
+margin_top = 454.59
+margin_right = 431.275
+margin_bottom = 499.59
 theme = ExtResource( 2 )
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 5 )
@@ -84,10 +84,10 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 141.025
-margin_top = 661.042
-margin_right = 192.025
-margin_bottom = 706.042
+margin_left = 136.07
+margin_top = 453.134
+margin_right = 187.07
+margin_bottom = 498.134
 theme = ExtResource( 2 )
 custom_styles/hover = ExtResource( 9 )
 custom_styles/pressed = ExtResource( 9 )
@@ -102,10 +102,10 @@ __meta__ = {
 }
 
 [node name="Username" type="LineEdit" parent="."]
-margin_left = 158.523
-margin_top = 589.682
-margin_right = 425.523
-margin_bottom = 636.682
+margin_left = 153.568
+margin_top = 381.774
+margin_right = 420.568
+margin_bottom = 428.774
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 max_length = 32
@@ -116,10 +116,10 @@ __meta__ = {
 }
 
 [node name="CheckBox" type="CheckBox" parent="."]
-margin_left = 182.033
-margin_top = 512.061
-margin_right = 215.033
-margin_bottom = 536.061
+margin_left = 177.078
+margin_top = 304.153
+margin_right = 210.078
+margin_bottom = 328.153
 pressed = true
 group = SubResource( 1 )
 __meta__ = {
