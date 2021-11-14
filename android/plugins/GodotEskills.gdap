@@ -1,0 +1,5 @@
+[config]
+
+name="GodotEskills"
+binary_type="local"
+binary="GodotEskills.debug.aar"
