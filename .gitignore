@@ -11,3 +11,4 @@ android/.build_version
 data_*/
 
 .idea/
+android/plugins/GodotEskills.debug.aar
