@@ -2,4 +2,8 @@
 
 name="GodotEskills"
 binary_type="local"
-binary="GodotEskills.debug.aar"
+binary="GodotEskills.release.aar"
+
+[dependencies]
+
+remote=["com.squareup.okhttp3:okhttp:4.9.0"]

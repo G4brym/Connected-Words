@@ -1,10 +1,22 @@
 extends Node2D
 
 
+func _ready():
+	if not Engine.has_singleton("GodotEskills"):
+		$"PlayAgainst".disabled = true
+
+
+
 func _on_PlayAgainst_pressed():
 	$"VersusStart".position.x = 0
 	$"VersusStart".show()
 
 
 func _on_Training_pressed():
-	get_tree().change_scene("res://Modules/Game.tscn")
+	SceneSwitcher.change_scene("Game.tscn", {
+		"versus_mode":true,
+		"opponent_username": "asd asdas",
+		"seed": 123123,
+	})
+	
+	#SceneSwitcher.change_scene("Game.tscn", {"versus_mode":false})
