@@ -46,29 +46,21 @@ func _on_room_found() -> void:
 	
 	var room = eskills.getRoom()
 	var current_user = room["current_user"]
+	var room_id = room["room_id"]
 	
-	var opponent = null
+	var opponent_username = null
 	for user in room["users"]:
 		if user["ticket_id"] != current_user["ticket_id"]:
 			# Opponent found
-			opponent = user
+			opponent_username = user["user_name"]
 			break
-			
-	var seed_to_use = int(current_user["room_metadata"].get("seed", 0))
-	var opponent_seed = int(opponent["room_metadata"].get("seed", 0))
 	
-	print("our seed " + str(seed_to_use))
-	print("opponent seed " + str(opponent_seed))
-	
-	if  opponent_seed > seed_to_use:
-		seed_to_use = opponent_seed
-	
+	Globals.set_seed(room_id)
 	SceneSwitcher.change_scene("Game.tscn", {
 			"versus_mode":true,
-			"opponent_username": opponent["user_name"],
-			"seed": seed_to_use,
+			"opponent_username": opponent_username,
+			"seed": room_id,
 		})
-	
 	
 func _on_Continue_pressed() -> void:
 	eskills.findRoom({
@@ -81,6 +73,5 @@ func _on_Continue_pressed() -> void:
 		number_of_users="2",
 		user_name=$"Username".text,
 		user_id=$"Username".text,
-		metadata={seed=Globals.get_random_seed()},
 	})
 	

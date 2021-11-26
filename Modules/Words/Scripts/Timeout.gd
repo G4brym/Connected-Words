@@ -26,7 +26,7 @@ func _process(delta):
 
 
 func _update_text() -> void:
-	text = "Time: " + str(round(timer.get_time_left()))
+	text = str(round(timer.get_time_left()))
 
 func _on_timer_timeout() -> void:
 	Events.emit_signal("game_ended")

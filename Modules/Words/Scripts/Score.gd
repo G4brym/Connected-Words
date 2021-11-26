@@ -22,7 +22,7 @@ func _register_optional_word_found(word: String) -> void:
 
 
 func _update_text() -> void:
-	text = "Score: " + str(current_score)
+	text = str(current_score)
 
 
 func _on_game_end() -> void:

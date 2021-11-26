@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Modules/Words/Picker.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modules/Words/Showcase.tscn" type="PackedScene" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Resources/Icons/shuffle.png" type="Texture" id=11]
 [ext_resource path="res://Modules/Words/Scripts/Shuffle.gd" type="Script" id=12]
 [ext_resource path="res://Modules/Menu/LevelCompleted.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Modules/Words/Scripts/Opponent.gd" type="Script" id=14]
+[ext_resource path="res://Resources/Themes/ClearBox.tres" type="StyleBox" id=15]
+[ext_resource path="res://Resources/Fonts/Sans-30-bold.tres" type="DynamicFont" id=16]
+[ext_resource path="res://Resources/Fonts/Sans-50.tres" type="DynamicFont" id=18]
 
 [node name="Game" type="Node2D"]
 
@@ -50,24 +54,134 @@ margin_bottom = 180.0
 [node name="GameManager" type="Node" parent="UI"]
 script = ExtResource( 3 )
 
-[node name="HBoxContainer" type="VBoxContainer" parent="UI"]
-margin_left = 43.0
-margin_top = 40.0
-margin_right = 162.0
-margin_bottom = 128.0
+[node name="Player" type="Node2D" parent="UI"]
+position = Vector2( 45, 40 )
+
+[node name="PlayerInfos" type="VBoxContainer" parent="UI/Player"]
+margin_right = 119.0
+margin_bottom = 88.0
 custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timeout" parent="UI/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Timeout" parent="UI/Player/PlayerInfos" instance=ExtResource( 7 )]
 margin_right = 119.0
+margin_bottom = 46.0
 custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = ExtResource( 18 )
+text = "555"
+align = 1
+valign = 1
 
-[node name="PlayerScore" parent="UI/HBoxContainer" instance=ExtResource( 6 )]
-margin_top = 49.0
+[node name="Score" parent="UI/Player/PlayerInfos" instance=ExtResource( 6 )]
+margin_top = 56.0
+margin_right = 119.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 18 )
+text = "456"
+align = 1
+valign = 1
+
+[node name="TimeLeftLabel" type="Label" parent="UI/Player"]
+anchor_left = -0.12
+anchor_top = 0.032
+anchor_right = -0.12
+anchor_bottom = 0.322
+margin_left = -18.4445
+margin_top = -2.02792
+margin_right = 156.555
+margin_bottom = 13.9721
+theme = ExtResource( 9 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
+text = "TIME LEFT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="UI/Player"]
+anchor_left = -0.12
+anchor_top = 0.032
+anchor_right = -0.12
+anchor_bottom = 0.322
+margin_left = -17.0654
+margin_top = 53.9706
+margin_right = 157.935
+margin_bottom = 70.9706
+theme = ExtResource( 9 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
+text = "YOUR SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opponent" type="Node2D" parent="UI"]
+position = Vector2( 410, 40 )
+script = ExtResource( 14 )
+
+[node name="OpponentInfos" type="VBoxContainer" parent="UI/Opponent"]
 margin_right = 119.0
 margin_bottom = 88.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" parent="UI/Opponent/OpponentInfos" instance=ExtResource( 7 )]
+margin_right = 119.0
+margin_bottom = 46.0
+custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = ExtResource( 18 )
+text = "555"
+align = 1
+valign = 1
+script = null
+
+[node name="Score" parent="UI/Opponent/OpponentInfos" instance=ExtResource( 6 )]
+margin_top = 56.0
+margin_right = 119.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 18 )
+text = "456"
+align = 1
+valign = 1
+script = null
+
+[node name="Name" type="Label" parent="UI/Opponent"]
+anchor_left = -0.12
+anchor_top = 0.032
+anchor_right = -0.12
+anchor_bottom = 0.322
+margin_left = -18.4445
+margin_top = -2.02792
+margin_right = 156.555
+margin_bottom = 13.9721
+theme = ExtResource( 9 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
+text = "OPPONENT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="UI/Opponent"]
+anchor_left = -0.12
+anchor_top = 0.032
+anchor_right = -0.12
+anchor_bottom = 0.322
+margin_left = -17.8146
+margin_top = 53.2214
+margin_right = 157.185
+margin_bottom = 70.2214
+theme = ExtResource( 9 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = ExtResource( 16 )
+text = "OPPONENT SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Shuffle" type="Button" parent="UI"]
 margin_left = 47.2644
