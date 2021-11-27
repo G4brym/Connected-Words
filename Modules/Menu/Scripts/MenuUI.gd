@@ -14,9 +14,7 @@ func _on_PlayAgainst_pressed():
 
 func _on_Training_pressed():
 	SceneSwitcher.change_scene("Game.tscn", {
-		"versus_mode":true,
-		"opponent_username": "asd asdas",
-		"seed": 123123,
+		"versus_mode":false,
 	})
 	
 	#SceneSwitcher.change_scene("Game.tscn", {"versus_mode":false})

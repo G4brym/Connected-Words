@@ -4,6 +4,7 @@ var Letter = preload("res://Modules/Words/Letra.tscn")
 const radius = 170
 
 var letters
+var game_ended = false
 
 func _ready() -> void:
 	Events.connect("update_picker_letters", self, "_update_picker_letters")
@@ -11,6 +12,11 @@ func _ready() -> void:
 	
 	Events.connect("word_found", self, "_reset_picker")
 	Events.connect("optional_word_found", self, "_reset_picker")
+	
+	Events.connect("game_ended", self, "_on_game_ended")
+
+func _on_game_ended():
+	game_ended = true
 
 func _reset_picker(word: String = "") -> void:
 	is_listening = false
@@ -69,6 +75,12 @@ var connected_letters = []
 
 
 func add_node_to_line(node):
+	if game_ended == true:
+		if current_line != null:
+			_reset_picker()
+			
+		return
+	
 	if current_line == null:
 		create_line(node)
 	

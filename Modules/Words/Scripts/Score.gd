@@ -23,7 +23,9 @@ func _register_optional_word_found(word: String) -> void:
 
 func _update_text() -> void:
 	text = str(current_score)
+	Events.emit_signal("score_updated", current_score)
 
 
 func _on_game_end() -> void:
-	Events.emit_signal("level_completed", current_score)
+	if SceneSwitcher.get_param("versus_mode") == false:
+		Events.emit_signal("level_completed", current_score, true)

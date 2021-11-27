@@ -29,4 +29,4 @@ func _update_text() -> void:
 	text = str(round(timer.get_time_left()))
 
 func _on_timer_timeout() -> void:
-	Events.emit_signal("game_ended")
+		Events.emit_signal("game_ended")

@@ -1,6 +1,6 @@
 extends Node
 
-const LEVEL_COMPLETENESS_PERC: int = 50
+const LEVEL_COMPLETENESS_PERC: int = 60
 
 var dictionary: WordManager.WordDictionary
 
@@ -16,14 +16,25 @@ func _ready() -> void:
 	_setup_level()
 	Events.connect("word_found", self, "_check_level_completeness")
 	Events.connect("try_word", self, "_try_optional_word")
+	Events.connect("level_completed", self, "_on_game_completed")
+
+
+func _on_game_completed(score: int, won: bool) -> void:
+	if SceneSwitcher.get_param("versus_mode") == true:
+		if score == -1:
+			$"UI/WaitingForPlayers"._show()
+		else:
+			$"UI/WaitingForPlayers"._hide()
+			$"UI/VersusCompleted".setup(won)
+		
+	else:
+		$"UI/LevelCompleted"._show(score)
 
 
 func _check_level_completeness(word_found: String) -> void:
 	words_found.append(word_found)
 	
-	print(len(words_found) * 100 / len(level_word_list))
 	if (len(words_found) * 100 / len(level_word_list)) > LEVEL_COMPLETENESS_PERC:
-		Events.emit_signal("level_completed")
 		_setup_level()
 		
 
