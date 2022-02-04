@@ -56,7 +56,7 @@ func _update_local_score(score) -> void:
 
 
 func _submit_final_score() -> void:
-	game_status = "TIME_UP"
+	game_status = "COMPLETED"
 	
 	#yield(get_tree().create_timer(0.1), "timeout")
 	#_update_scores()

@@ -51,7 +51,7 @@ func _try_optional_word(word: String) -> void:
 
 func _setup_level() -> void:
 	words_found = []
-	level_word = dictionary.get_random_word(7)
+	level_word = dictionary.get_random_word(5)
 	level_word_list = dictionary.list_anagram_words(level_word)
 	
 	if len(level_word_list) == 1:
