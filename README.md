@@ -1,6 +1,6 @@
 # Connected Words
 
-Connected word is a very simple mobile game, where the player needs to find all words that contain a
+Connected word is a very simple mobile game, where the player needs to find all words that can be built using a
 given list of letters, inspired by [this game](https://play.google.com/store/apps/details?id=com.wordgame.words.connect).
 
 This game is built using the [Godot Engine](https://godotengine.org/) and has an integration with 
