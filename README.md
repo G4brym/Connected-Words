@@ -51,19 +51,25 @@ every time the player tries a new word that is not in the game board.
 
 ## Images of the game
 Home
+
 ![Home](https://github.com/G4brym/Connected-Words/raw/master/images/home.png)
 
 Singleplayer game
+
 ![Singleplayer game](https://github.com/G4brym/Connected-Words/raw/master/images/singleplayer-game.png)
 
 Multiplayer start
+
 ![Multiplayer start](https://github.com/G4brym/Connected-Words/raw/master/images/multiplayer-entry.png)
 
 Multiplayer name picker
+
 ![Multiplayer name picker](https://github.com/G4brym/Connected-Words/raw/master/images/multiplayer-name-pick.png)
 
 Multiplayer game
+
 ![Multiplayer game](https://github.com/G4brym/Connected-Words/raw/master/images/multiplayer-game.png)
 
 Multiplayer Finish
+
 ![Multiplayer Finish](https://github.com/G4brym/Connected-Words/raw/master/images/multiplayer-finish.png)
